@@ -14,7 +14,7 @@ connectDB();
 const app = express();
 app.use(express.json({extended:true}))
 app.use(express.urlencoded({extended: true}))
-app.use(cors({credentials:true, origin:"*"}));
+app.use(cors({credentials:true, origin:"https://blog-backend-3-t6xn.onrender.com"}));
 app.use(upload());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
