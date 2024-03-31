@@ -10,9 +10,7 @@ const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 
 
 connectDB();
-app.get("/", (req,res)=>{
-    res.send("APi is Working");
-});
+
 const app = express();
 app.use(express.json({extended:true}))
 app.use(express.urlencoded({extended: true}))
