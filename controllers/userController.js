@@ -2,10 +2,11 @@ const User = require("../models/userModel");
 const HttpError = require("../models/errorModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-require('dotenv').config();
+// require('dotenv').config();
 const fs =require("fs");
 const path = require("path");
 const{v4: uuid} = require("uuid");
+secretkey = "appppugdhh";
 
 
 
@@ -71,7 +72,7 @@ const loginUser= async(req, res, next)=>{
         }
 
         const {_id: id, name} = user;
-        const token = jwt.sign({id, name},process.env.JWT_SECRET);
+        const token = jwt.sign({id, name},"secretkey");
         res.status(200).json({token,name,id});
 
     } catch (error) {
